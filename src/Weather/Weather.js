@@ -27,7 +27,7 @@ function Weather() {
 //function 1
   const handleSubmit = async (e) => {
           e.preventDefault();
-          const apiKey = '5de736e4d924b76352a1dac502db97d6';
+          const apiKey = '';
           const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
           const response = await fetch(apiUrl);
           const data = await response.json();
@@ -52,7 +52,7 @@ function Weather() {
 
           var d=parseFloat((data.main.temp)-(273.15)).toFixed(2);
           setw(parseFloat((data.main.temp)-(273.15)).toFixed(2));
-          await fetch(`http://api.timezonedb.com/v2.1/list-time-zone?format=json&key=ZOL8W43ZQDAB&country=${data.sys.country}`)
+          await fetch(`http://api.timezonedb.com/v2.1/list-time-zone?format=json&key=&country=${data.sys.country}`)
             .then(response => response.json())
             .then(async data2 => {
             await sett(data2.zones[0].timestamp-3600 )
